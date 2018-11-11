@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Request number:</strong>
+  <%= @ticket.request_number %>
+</p>
+
+<p>
+  <strong>Sequence number:</strong>
+  <%= @ticket.sequence_number %>
+</p>
+
+<p>
+  <strong>Request type:</strong>
+  <%= @ticket.request_type %>
+</p>
+
+<p>
+  <strong>Request action:</strong>
+  <%= @ticket.request_action %>
+</p>
+
+<p>
+  <strong>Contact center:</strong>
+  <%= @ticket.contact_center %>
+</p>
+
+<%= link_to 'Edit', edit_ticket_path(@ticket) %> |
+<%= link_to 'Back', tickets_path %>

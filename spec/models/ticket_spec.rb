@@ -1,9 +1,15 @@
 require "rails_helper"
 
 RSpec.describe Ticket, type: :model do
-  context "associations" do
+  context "#associations" do
     it { should have_one(:excavator) }
     it{ should accept_nested_attributes_for :excavator }
+  end
+
+  context "#validations" do
+    subject { create(:ticket) }
+    it { should validate_presence_of(:contact_center) }
+    it { should validate_presence_of(:request_number) }
   end
 
   context "#map_coordinates" do

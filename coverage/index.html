@@ -14,26 +14,26 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-11-12T11:01:04+05:30">2018-11-12T11:01:04+05:30</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-11-12T11:03:13+05:30">2018-11-12T11:03:13+05:30</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">98.82%</span></span>
+    (<span class="covered_percent"><span class="green">98.84%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.73
+         1.76
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>34</b> files in total.
-    <b>255</b> relevant lines. 
-    <span class="green"><b>252</b> lines covered</span> and
+    <b>259</b> relevant lines. 
+    <span class="green"><b>256</b> lines covered</span> and
     <span class="red"><b>3</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -343,11 +343,11 @@
       <tr>
         <td class="strong"><a href="#ed9f721fbb577a4e696d81c161017f07270e8dcd" class="src_link" title="spec/models/ticket_spec.rb">spec/models/ticket_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>25</td>
-        <td>15</td>
-        <td>15</td>
+        <td>31</td>
+        <td>19</td>
+        <td>19</td>
         <td>0</td>
-        <td>1.1</td>
+        <td>1.3</td>
       </tr>
       
       <tr>
@@ -387,7 +387,7 @@
         <td>11</td>
         <td>10</td>
         <td>1</td>
-        <td>5.3</td>
+        <td>5.8</td>
       </tr>
       
     </tbody>
@@ -3674,8 +3674,8 @@
     <h3>spec/models/ticket_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>15</b> relevant lines. 
-      <span class="green"><b>15</b> lines covered</span> and
+      <b>19</b> relevant lines. 
+      <span class="green"><b>19</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -3704,7 +3704,7 @@
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">  context &quot;associations&quot; do</code>
+          <code class="ruby">  context &quot;#associations&quot; do</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="5">
@@ -3734,55 +3734,55 @@
         <li class="covered" data-hits="1" data-linenumber="9">
           <span class="hits">1</span>
           
-          <code class="ruby">  context &quot;#map_coordinates&quot; do</code>
+          <code class="ruby">  context &quot;#validations&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="10">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="3" data-linenumber="10">
+          <span class="hits">3</span>
           
-          <code class="ruby">    it &quot;should return co-ordinate values to ploygon map as json&quot; do</code>
+          <code class="ruby">    subject { create(:ticket) }</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="11">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="11">
+          <span class="hits">2</span>
           
-          <code class="ruby">      ticket = create(:ticket)</code>
+          <code class="ruby">    it { should validate_presence_of(:contact_center) }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="12">
+        <li class="covered" data-hits="2" data-linenumber="12">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    it { should validate_presence_of(:request_number) }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="13">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      expect(ticket.map_coordinates).to_not be_empty</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="14">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      expect(ticket.map_coordinates.first.class).to be(Hash)</code>
-        </li>
-      
         <li class="covered" data-hits="1" data-linenumber="15">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(ticket.map_coordinates.first[:lat]).to_not be_nil</code>
+          <code class="ruby">  context &quot;#map_coordinates&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="16">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(ticket.map_coordinates.first[:lng]).to_not be_nil</code>
+          <code class="ruby">    it &quot;should return co-ordinate values to ploygon map as json&quot; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="17">
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">      ticket = create(:ticket)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="18">
@@ -3794,25 +3794,25 @@
         <li class="covered" data-hits="1" data-linenumber="19">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &quot;should return empty if digsite_info values not present&quot; do</code>
+          <code class="ruby">      expect(ticket.map_coordinates).to_not be_empty</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="20">
           <span class="hits">1</span>
           
-          <code class="ruby">      ticket = create(:ticket, digsite_info: &quot;&quot;)</code>
+          <code class="ruby">      expect(ticket.map_coordinates.first.class).to be(Hash)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="21">
+        <li class="covered" data-hits="1" data-linenumber="21">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">      expect(ticket.map_coordinates.first[:lat]).to_not be_nil</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="22">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(ticket.map_coordinates).to be_empty</code>
+          <code class="ruby">      expect(ticket.map_coordinates.first[:lng]).to_not be_nil</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="23">
@@ -3824,10 +3824,46 @@
         <li class="never" data-hits="" data-linenumber="24">
           
           
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="25">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &quot;should return empty if digsite_info values not present&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="26">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      ticket = create(:ticket, digsite_info: &quot;&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="27">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="28">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(ticket.map_coordinates).to be_empty</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="29">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="25">
+        <li class="never" data-hits="" data-linenumber="31">
           
           
           <code class="ruby">end</code>
@@ -4461,8 +4497,8 @@
           <code class="ruby">  config.before(:each) do</code>
         </li>
       
-        <li class="covered" data-hits="17" data-linenumber="7">
-          <span class="hits">17</span>
+        <li class="covered" data-hits="19" data-linenumber="7">
+          <span class="hits">19</span>
           
           <code class="ruby">    DatabaseCleaner.strategy = :deletion</code>
         </li>
@@ -4509,8 +4545,8 @@
           <code class="ruby">  config.before(:each) do</code>
         </li>
       
-        <li class="covered" data-hits="17" data-linenumber="15">
-          <span class="hits">17</span>
+        <li class="covered" data-hits="19" data-linenumber="15">
+          <span class="hits">19</span>
           
           <code class="ruby">    DatabaseCleaner.start</code>
         </li>
@@ -4533,8 +4569,8 @@
           <code class="ruby">  config.after(:each) do</code>
         </li>
       
-        <li class="covered" data-hits="17" data-linenumber="19">
-          <span class="hits">17</span>
+        <li class="covered" data-hits="19" data-linenumber="19">
+          <span class="hits">19</span>
           
           <code class="ruby">    DatabaseCleaner.clean</code>
         </li>

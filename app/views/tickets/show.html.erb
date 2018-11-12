@@ -31,7 +31,7 @@
       function initMap() {
         selector = document.getElementById('map');
         map = new google.maps.Map(selector, {
-          zoom: 13,
+          zoom: 11,
           center: <%=raw @ticket.map_coordinates.first.to_json %>,
           mapTypeId: 'terrain'
         });

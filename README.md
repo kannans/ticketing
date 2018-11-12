@@ -15,3 +15,6 @@ curl -X POST  -H "Accept: Application/json" -H "Content-Type: application/json" 
   
 * Test cases
    - rspec
+
+* PolygonMap
+  ![intersect](https://github.com/kannans/ticketing/raw/master/map.jpg)

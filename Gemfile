@@ -34,6 +34,7 @@ group :test do
   gem 'shoulda-matchers'
   gem 'faker'
   gem 'database_cleaner'
+  gem "rails-controller-testing", "~> 1.0.2"
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

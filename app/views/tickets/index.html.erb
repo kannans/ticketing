@@ -1,36 +1,37 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <h1>Tickets</h1>
 
-<h1>Tickets</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Request number</th>
-      <th>Sequence number</th>
-      <th>Request type</th>
-      <th>Request action</th>
-      <th>Contact center</th>
-      <th>Company name</th>
-      <th>Address</th>
-      <th>CrewOnSite</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @tickets.each do |ticket| %>
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= ticket.request_number %></td>
-        <td><%= ticket.sequence_number %></td>
-        <td><%= ticket.request_type %></td>
-        <td><%= ticket.request_action %></td>
-        <td><%= ticket.contact_center %></td>
-        <td><%= ticket.excavator&.company_name %></td>
-        <td><%= ticket.excavator&.address %></td>
-        <td><%= ticket.excavator&.crew_onsite %></td>
-        <td><%= link_to 'Show', ticket %></td>
-        <td><%= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Request number</th>
+        <th>Sequence number</th>
+        <th>Request type</th>
+        <th>Request action</th>
+        <th>Contact center</th>
+        <th>Company name</th>
+        <th>Address</th>
+        <th>CrewOnSite</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @tickets.each do |ticket| %>
+        <tr>
+          <td><%= ticket.request_number %></td>
+          <td><%= ticket.sequence_number %></td>
+          <td><%= ticket.request_type %></td>
+          <td><%= ticket.request_action %></td>
+          <td><%= ticket.contact_center %></td>
+          <td><%= ticket.excavator&.company_name %></td>
+          <td><%= ticket.excavator&.address %></td>
+          <td><%= ticket.excavator&.crew_onsite %></td>
+          <td><%= link_to 'Show', ticket %></td>
+          <td><%= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>

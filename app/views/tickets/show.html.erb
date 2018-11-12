@@ -1,30 +1,29 @@
-<h2> Ticket Details </h2>
-<% @ticket.attributes.each do |key, value| %>
-  <p>
-    <strong><%= key.humanize %>: </strong>
-    <%= value %>
-  </p>
-<% end %>
-<hr />
-<h2> Excavator Details </h2>
-<% @ticket.excavator.attributes.each do |key, value| %>
-  <p>
-    <strong><%= key.humanize %>: </strong>
-    <%= value %>
-  </p>
-<% end %>
-<br>
-<hr />
-<%= link_to 'Back', tickets_path %>
-<br><br><br><br><br>
-
+<div class="container">
+  <h2> Ticket Details </h2>
+  <% @ticket.attributes.each do |key, value| %>
+    <p>
+      <strong><%= key.humanize %>: </strong>
+      <%= value %>
+    </p>
+  <% end %>
+  <hr />
+  <h2> Excavator Details </h2>
+  <% @ticket.excavator.attributes.each do |key, value| %>
+    <p>
+      <strong><%= key.humanize %>: </strong>
+      <%= value %>
+    </p>
+  <% end %>
+  <br>
+  <hr />
+  <%= link_to 'Back', tickets_path %>
+  <br><br><br><br><br>
+</div>
 <h2> Plotted Map </h2>
 
 <div id="map"></div>
 
-
 <% content_for :page_js  do %>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAC_EY2cWB6VR7hggFTSSY6LlBuz5HSfZs&callback=initMap"></script>
     <%= javascript_tag do %>
       var map;
       var infoWindow;
@@ -32,26 +31,27 @@
       function initMap() {
         selector = document.getElementById('map');
         map = new google.maps.Map(selector, {
-          zoom: 5,
-          center: {lat: 24.886, lng: -70.268},
+          zoom: 13,
+          center: <%=raw @ticket.map_coordinates.first.to_json %>,
           mapTypeId: 'terrain'
         });
 
-        var Coords = [];
+        var coords = [];
         <% @ticket.map_coordinates.each do |data| %>
-          Coords.push(<%=raw data.to_json %>);
+          coords.push(<%=raw data.to_json %>);
         <% end %>
-        var bermudaTriangle = new google.maps.Polygon({
-          paths: Coords,
+
+        var ticketMap = new google.maps.Polygon({
+          paths: coords,
           strokeColor: '#FF0000',
           strokeOpacity: 0.8,
           strokeWeight: 3,
           fillColor: '#FF0000',
           fillOpacity: 0.35
         });
-        bermudaTriangle.setMap(map);
+        ticketMap.setMap(map);
 
-        bermudaTriangle.addListener('click', showArrays);
+        ticketMap.addListener('click', showArrays);
 
         infoWindow = new google.maps.InfoWindow;
       }
@@ -74,4 +74,7 @@
         infoWindow.open(map);
       }
     <% end %>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6XRvj2LObTSCeZDoa1cF1GCS_YhWXii0&callback=initMap">
+    </script>
 <% end %>

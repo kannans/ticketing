@@ -8,7 +8,7 @@ class Ticket < ApplicationRecord
 
   def map_coordinates
     array_info = digsite_info_polygon_data.split(',')
-    array_info.map { |x| x.split(" ") }.map { |x| { lat: x.first, lng: x.last } }
+    array_info.map { |x| x.split(" ") }.map { |x| { lat: x.last.to_f, lng: x.first.to_f } }
   end
 
   def digsite_info_polygon_data

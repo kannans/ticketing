@@ -11,5 +11,9 @@
 
   <body>
     <%= yield %>
+
+    <% if content_for?(:page_js) %>
+      <%= yield(:page_js) %>
+    <% end %>
   </body>
 </html>

@@ -3,7 +3,12 @@
   <% @ticket.attributes.each do |key, value| %>
     <p>
       <strong><%= key.humanize %>: </strong>
-      <%= value %>
+       <% if value.is_a?(Hash) %>
+        <code><%= value %></code>
+      <% else %>
+        <%= value %>
+      <% end %>
+
     </p>
   <% end %>
   <hr />
@@ -11,7 +16,11 @@
   <% @ticket.excavator.attributes.each do |key, value| %>
     <p>
       <strong><%= key.humanize %>: </strong>
-      <%= value %>
+      <% if value.is_a?(Hash) %>
+        <code><%= value %></code>
+      <% else %>
+        <%= value %>
+      <% end %>
     </p>
   <% end %>
   <br>

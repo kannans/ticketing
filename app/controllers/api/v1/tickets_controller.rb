@@ -5,7 +5,7 @@ class Api::V1::TicketsController < Api::V1::BaseController
     if ticket.save
       json_response(ticket, :created)
     else
-      json_response(ticket.errors, status: :unprocessable_entity)
+      json_response(ticket.errors, :unprocessable_entity)
     end
   end
 

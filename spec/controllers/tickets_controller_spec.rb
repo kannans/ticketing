@@ -22,4 +22,17 @@ RSpec.describe TicketsController, type: :controller do
       expect(assigns(:ticket)).to_not be_nil
     end
   end
+
+  context "#destroy" do
+    it "should show the ticket details" do
+      ticket = create(:ticket)
+
+      expect(Ticket.all.size).to eq(1)
+
+      delete :destroy, params: { id: ticket.id }
+
+      expect(Ticket.all.size).to eq(0)
+      expect(response).to have_http_status(:found)
+    end
+  end
 end

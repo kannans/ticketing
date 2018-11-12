@@ -1,6 +1,5 @@
 module SymbolizeHelper
   def symbolize_recursive(hash)
-    p hash
     {}.tap do |h|
       hash.each { |key, value| h[key.to_s.underscore.to_sym] = map_value(value) }
     end

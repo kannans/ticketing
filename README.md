@@ -1,24 +1,17 @@
-# README
+### Create ticket using post API
+```
+curl -X POST  -H "Accept: Application/json" -H "Content-Type: application/json" http://localhost:3000/api/tickets/ -d '{
+"ContactCenter": "xxx", "RequestNumber": "yyy" }'
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+```
 
 * Ruby version
-
-* System dependencies
-
-* Configuration
-
+  - ruby "2.5.0"
+  - rails "5.2.1"
+  
 * Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  - postgresql 10
+  - rails db:setup
+  
+* Test cases
+   - rspec

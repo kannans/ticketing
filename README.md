@@ -11,10 +11,10 @@ curl -X POST  -H "Accept: Application/json" -H "Content-Type: application/json" 
   
 * Database creation
   - postgresql 10
-  - rails db:setup
+  - `rails db:setup`
   
 * Test cases
-   - rspec
+   - `rspec`
 
 * PolygonMap
   ![intersect](https://github.com/kannans/ticketing/raw/master/map.jpg)
